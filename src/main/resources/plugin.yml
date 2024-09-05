@@ -1,0 +1,11 @@
+name: KitSelector
+version: '1.0-SNAPSHOT'
+main: com.drylands.Starter
+api-version: '1.21'
+depend: [NBTAPI]
+folia-supported: true
+
+commands:
+  kit:
+    description: Open the kit gui
+    usage: /kit
