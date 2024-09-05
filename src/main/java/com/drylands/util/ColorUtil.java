@@ -5,12 +5,12 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.jetbrains.annotations.NotNull;
 
 public class ColorUtil {
-
-    public static @NotNull Component colorize(String message) {
+    @NotNull
+    public static Component colorize(String message) {
         return supportLegacyFormats(message);
     }
-
-    private static @NotNull Component supportLegacyFormats(String message) {
+    @NotNull
+    private static Component supportLegacyFormats(String message) {
         message = message.replaceAll("&", "§");
         message = message.replaceAll("§0", "<black>");
         message = message.replaceAll("§1", "<dark_blue>");
