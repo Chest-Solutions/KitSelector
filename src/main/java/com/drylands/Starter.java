@@ -1,6 +1,5 @@
 package com.drylands;
 
-import net.kyori.adventure.text.ComponentBuilderApplicable;
 import net.kyori.adventure.text.TextComponent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,7 +8,6 @@ import com.drylands.util.ColorUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 
 public final class Starter extends JavaPlugin {
@@ -37,7 +35,9 @@ public final class Starter extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
-    public static ComponentBuilderApplicable colorize(String message) {
-        return ColorUtil.colorize(message);
+
+    @NotNull
+    public static TextComponent colorize(String message) {
+        return (TextComponent) ColorUtil.colorize(message);
     }
 }
