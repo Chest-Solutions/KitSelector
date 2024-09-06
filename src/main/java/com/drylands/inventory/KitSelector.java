@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class KitSelector {
     int inventorySize = 3 * 9;
@@ -31,7 +32,7 @@ public class KitSelector {
         new KitSelector().OpenKitInv(player);
     }
 
-    public void OpenKitInv(Player player) {
+    public void OpenKitInv(@NotNull Player player) {
         player.openInventory(kitInventory);
     }
 
