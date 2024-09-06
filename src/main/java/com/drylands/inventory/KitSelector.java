@@ -20,7 +20,7 @@ public class KitSelector {
         kitInventory = Bukkit.createInventory(null, inventorySize, Starter.colorize(inventoryName));
         ItemStack NetherStar = new ItemStack(Material.NETHER_STAR);
         String ItemName = config.getString("item-name");
-        NetherStar.editMeta(meta -> meta.displayName(Starter.colorize(ItemName)));
+        NetherStar.editMeta(meta -> meta.displayName(Starter.colorize("<white>" + ItemName)));
         kitInventory.setItem(10, NetherStar);
         kitInventory.setItem(13, NetherStar);
         kitInventory.setItem(16, NetherStar);
