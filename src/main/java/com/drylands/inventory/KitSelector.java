@@ -1,30 +1,36 @@
 package com.drylands.inventory;
 
 import com.drylands.Starter;
+import com.drylands.util.ColorUtil;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class KitSelector {
+public class KitSelector implements Listener, InventoryHolder {
     int inventorySize = 3 * 9;
+    private final Inventory inventory;
 
-    Inventory kitInventory;
 
     public KitSelector() {
         // Construction started
         FileConfiguration config = Starter.getInstance().getConfig();
         String inventoryName = config.getString("kit-selection-name");
-        kitInventory = Bukkit.createInventory(null, inventorySize, Starter.colorize(inventoryName));
+        inventory = Bukkit.createInventory(this, inventorySize, ColorUtil.colorize(inventoryName));
         ItemStack NetherStar = new ItemStack(Material.NETHER_STAR);
         String ItemName = config.getString("item-name");
-        NetherStar.editMeta(meta -> meta.displayName(Starter.colorize("<white>" + ItemName)));
-        kitInventory.setItem(10, NetherStar);
-        kitInventory.setItem(13, NetherStar);
-        kitInventory.setItem(16, NetherStar);
+        NetherStar.editMeta(meta -> meta.displayName(ColorUtil.colorize("<white>" + ItemName)));
+        this.inventory.setItem(10, NetherStar);
+        this.inventory.setItem(13, NetherStar);
+        this.inventory.setItem(16, NetherStar);
 
     }
 
@@ -33,7 +39,42 @@ public class KitSelector {
     }
 
     public void OpenKitInv(@NotNull Player player) {
-        player.openInventory(kitInventory);
+        player.openInventory(this.inventory);
+    }
+    @EventHandler
+    public void onInventoryClick(@NotNull InventoryClickEvent event) {
+        FileConfiguration config = Starter.getInstance().getConfig();
+        String inventoryName = config.getString("kit-selection-name");
+        Player player = (Player) event.getWhoClicked();
+        Inventory inventory = event.getInventory();
+        Component InventoryName = event.getView().title();
+        assert inventoryName != null;
+
+        if (InventoryName != ColorUtil.colorize(inventoryName) || !(inventory.getHolder(false) instanceof KitSelector)) {
+            return;
+        }
+
+        event.setCancelled(true);
+
+        if (event.getRawSlot() == 10) {
+            //open first inventory gui
+        }
+
+        if (event.getRawSlot() == 13) {
+            //open second inventory gui
+        }
+
+        if (event.getRawSlot() == 16) {
+            //open third inventory gui
+        }
+
+
+
     }
 
+    @Override
+    @NotNull
+    public Inventory getInventory() {
+        return this.inventory;
+    }
 }

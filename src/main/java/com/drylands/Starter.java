@@ -1,12 +1,9 @@
 package com.drylands;
 
 import de.tr7zw.changeme.nbtapi.NBT;
-import net.kyori.adventure.text.TextComponent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.drylands.commands.KitCommand;
-import com.drylands.util.ColorUtil;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -36,10 +33,5 @@ public final class Starter extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-    }
-
-    @NotNull
-    public static TextComponent colorize(String message) {
-        return (TextComponent) ColorUtil.colorize(message);
     }
 }
