@@ -2,7 +2,6 @@ package com.drylands.inventory;
 
 import com.drylands.Starter;
 import com.drylands.util.ColorUtil;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -43,21 +42,17 @@ public class KitSelector implements Listener, InventoryHolder {
     }
     @EventHandler
     public void onInventoryClick(@NotNull InventoryClickEvent event) {
-        FileConfiguration config = Starter.getInstance().getConfig();
-        String inventoryName = config.getString("kit-selection-name");
         Player player = (Player) event.getWhoClicked();
         Inventory inventory = event.getInventory();
-        Component InventoryName = event.getView().title();
-        assert inventoryName != null;
 
-        if (InventoryName != ColorUtil.colorize(inventoryName) || !(inventory.getHolder(false) instanceof KitSelector)) {
+        if (!(inventory.getHolder(false) instanceof KitSelector)) {
             return;
         }
 
         event.setCancelled(true);
 
         if (event.getRawSlot() == 10) {
-            //open first inventory gui
+            Kit1.FirstKitInventory(player);
         }
 
         if (event.getRawSlot() == 13) {

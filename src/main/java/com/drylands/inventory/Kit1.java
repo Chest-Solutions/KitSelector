@@ -13,12 +13,14 @@ public class Kit1 implements Listener, InventoryHolder {
     private Inventory inventory;
 
     public static void FirstKitInventory(Player player) {
-        new KitSelector().OpenKitInv(player);
+        new Kit1().OpenKitInv(player);
     }
 
     public void OpenKitInv(@NotNull Player player) {
         player.setGameMode(GameMode.CREATIVE);
         this.inventory = player.getInventory();
+        player.closeInventory();
+        player.openInventory(this.inventory);
     }
     @EventHandler
     public void onInventoryClose(@NotNull final InventoryCloseEvent event) {
