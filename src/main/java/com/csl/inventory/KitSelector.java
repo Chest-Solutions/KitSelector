@@ -1,7 +1,7 @@
-package com.drylands.inventory;
+package com.csl.inventory;
 
-import com.drylands.Starter;
-import com.drylands.util.ColorUtil;
+import com.csl.Starter;
+import com.csl.util.ColorUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;

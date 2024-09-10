@@ -1,4 +1,4 @@
-package com.drylands.inventory;
+package com.csl.inventory;
 
 import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;

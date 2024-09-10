@@ -1,11 +1,11 @@
-package com.drylands;
+package com.csl;
 
-import com.drylands.inventory.Kit1;
-import com.drylands.inventory.KitSelector;
+import com.csl.inventory.Kit1;
+import com.csl.inventory.KitSelector;
 import de.tr7zw.changeme.nbtapi.NBT;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import com.drylands.commands.KitCommand;
+import com.csl.commands.KitCommand;
 
 import java.util.Objects;
 

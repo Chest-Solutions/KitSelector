@@ -4,7 +4,7 @@ plugins {
     id "xyz.jpenilla.run-paper" version "2.3.1"
 }
 
-group = 'com.drylands'
+group = 'com.csl'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -53,7 +53,7 @@ processResources {
 }
 
 shadowJar {
-    relocate 'de.tr7zw.changeme.nbtapi', 'com.drylands.nbtapi'
+    relocate 'de.tr7zw.changeme.nbtapi', 'com.csl.nbtapi'
 }
 
 

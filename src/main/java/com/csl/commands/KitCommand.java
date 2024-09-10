@@ -1,9 +1,9 @@
-package com.drylands.commands;
+package com.csl.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.Command;
-import com.drylands.inventory.KitSelector;
+import com.csl.inventory.KitSelector;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 

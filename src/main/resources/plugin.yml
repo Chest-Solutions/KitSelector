@@ -1,6 +1,6 @@
 name: KitSelector
 version: '1.0-SNAPSHOT'
-main: com.drylands.Starter
+main: com.csl.Starter
 api-version: '1.21'
 folia-supported: true
 
