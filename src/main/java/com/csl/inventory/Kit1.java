@@ -2,7 +2,6 @@ package com.csl.inventory;
 
 import com.csl.util.ColorUtil;
 import org.bukkit.GameMode;
-import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
@@ -23,12 +22,12 @@ public class Kit1 implements Listener, InventoryHolder {
 
     public void OpenKitInv(@NotNull Player player) {
         ItemStack confirm = new ItemStack(LIME_DYE);
-        confirm.editMeta(meta -> meta.displayName(ColorUtil.colorize("<greenn>" + "Confirm")));
+        confirm.editMeta(meta -> meta.displayName(ColorUtil.colorize("<green>" + "Confirm")));
         player.setGameMode(GameMode.CREATIVE);
         this.inventory = player.getInventory();
         player.closeInventory();
         player.openInventory(this.inventory);
-        this.inventory.setItem(45, confirm);
+        this.inventory.setItem(1, confirm);
     }
     @EventHandler
     public void onInventoryClose(@NotNull final InventoryCloseEvent event) {

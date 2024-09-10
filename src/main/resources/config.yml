@@ -1,6 +1,5 @@
 # You can name the kits anything you want! or leave it as it is.
 
-kit-name-one: 'KIT 1'
-kit-name-two: 'KIT 2'
-kit-name-three: 'KIT 3'
+# %num% Is replaced with the kit number
+kit-names: 'KIT %num%'
 kit-selection-name: 'Select your kit.'
