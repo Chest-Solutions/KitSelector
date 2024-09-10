@@ -15,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class KitSelector implements Listener, InventoryHolder {
-    int inventorySize = 3 * 9;
+    int inventorySize = 4 * 9;
     private final Inventory inventory;
 
 
@@ -24,12 +24,21 @@ public class KitSelector implements Listener, InventoryHolder {
         FileConfiguration config = Starter.getInstance().getConfig();
         String inventoryName = config.getString("kit-selection-name");
         inventory = Bukkit.createInventory(this, inventorySize, ColorUtil.colorize(inventoryName));
-        ItemStack NetherStar = new ItemStack(Material.NETHER_STAR);
-        String ItemName = config.getString("item-name");
-        NetherStar.editMeta(meta -> meta.displayName(ColorUtil.colorize("<white>" + ItemName)));
-        this.inventory.setItem(10, NetherStar);
-        this.inventory.setItem(13, NetherStar);
-        this.inventory.setItem(16, NetherStar);
+        // KIT 1
+        ItemStack NetherStar1 = new ItemStack(Material.NETHER_STAR);
+        String ItemName = config.getString("kit-name-one");
+        NetherStar1.editMeta(meta -> meta.displayName(ColorUtil.colorize("<white>" + ItemName)));
+        // KIT 2
+        ItemStack NetherStar2 = new ItemStack(Material.NETHER_STAR);
+        String ItemName2 = config.getString("kit-name-two");
+        NetherStar2.editMeta(meta -> meta.displayName(ColorUtil.colorize("<white>" + ItemName2)));
+        //KIT 3
+        ItemStack NetherStar3 = new ItemStack(Material.NETHER_STAR);
+        String ItemName3 = config.getString("kit-name-three");
+        NetherStar3.editMeta(meta -> meta.displayName(ColorUtil.colorize("<white>" + ItemName3)));
+        this.inventory.setItem(10, NetherStar1);
+        this.inventory.setItem(13, NetherStar2);
+        this.inventory.setItem(16, NetherStar3);
 
     }
 
